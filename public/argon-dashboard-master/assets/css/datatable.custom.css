@@ -1,0 +1,106 @@
+.table-responsive {
+    overflow: hidden;
+}
+.select2-selection{
+    width: 100%;
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD !important;
+    border-radius: 4px;
+    color: #66615b;
+    line-height: normal;
+    font-size: 14px;
+    -webkit-transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    /*padding: 7px;*/
+}
+.select2-selection:focus,.select2-selection:active {
+    border: 1px solid #9A9A9A !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: 0 !important;
+    color: #66615B;
+}
+.select2{
+  width: 100% !important;
+}
+.esconde{
+    display:none;
+}
+.alinhar-filtro{
+    margin:10px -15px;
+}
+.dataTables_filter,.dataTables_paginate{
+    float: right;
+}
+.yadcf-filter{
+    display: block;
+    width: 100%;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    padding: 5px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    padding: 10px 10px 10px 10px;
+}
+.yadcf-filter-range-date{
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    padding: 4px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.yadcf-filter-wrapper-inner{
+    border:0;
+}
+.yadcf-filter-wrapper{
+    width: 100%;
+}
+.ui-datepicker, .ui-widget, .ui-widget-content, .ui-helper-clearfix, .ui-corner-all{
+    background-color: #fff;
+}
+.yadcf-filter-date {
+    width: 100%;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    padding: 4px;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.yadcf-filter-reset-button {
+    padding: 3px 9px;
+    font-size: 15px;
+    margin-left:-34px;
+    line-height: 1;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+}
+.table{
+    width: 100% !important;
+}
+
+.table thead th {
+    width: 127px;
+}
