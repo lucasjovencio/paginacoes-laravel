@@ -4,7 +4,6 @@
 <style type="text/css">
   
 </style>
-<link href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" />
 @endsection
 @section('main_top')
   <div class="header-body">
