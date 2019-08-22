@@ -7,10 +7,25 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Carbon\Carbon;
+use JamesDordoy\LaravelVueDatatable\Traits\LaravelVueDatatableTrait;
+
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, LaravelVueDatatableTrait;
     // use SoftDeletes;
+
+    protected $dataTableColumns = [
+        'name' => [
+            'searchable' => true,
+        ],
+        'genre' => [
+            'searchable' => true,
+        ],
+        'status' => [
+            'searchable' => true,
+        ]
+    ];
+    
 
     /**
      * The attributes that are mass assignable.

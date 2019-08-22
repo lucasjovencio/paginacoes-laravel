@@ -2,36 +2,7 @@
 
 @section('css')
 <style type="text/css">
-  /* Start by setting display:none to make this hidden.
-   Then we position it in relation to the viewport window
-   with position:fixed. Width, height, top and left speak
-   for themselves. Background we set to 80% white with
-   our animation centered, and no-repeating */
-    .modal {
-        display:    none;
-        position:   fixed;
-        z-index:    1000;
-        top:        0;
-        left:       0;
-        height:     100%;
-        width:      100%;
-        background: rgba( 255, 255, 255, .8 ) 
-                    url('http://i.stack.imgur.com/FhHRx.gif') 
-                    50% 50% 
-                    no-repeat;
-    }
-
-    /* When the body has the loading class, we turn
-    the scrollbar off with overflow:hidden */
-    body.loading .modal {
-        overflow: hidden;   
-    }
-
-    /* Anytime the body has the loading class, our
-    modal element will be visible */
-    body.loading .modal {
-        display: block;
-    }
+  
 </style>
 @endsection
 @section('main_top')
@@ -54,7 +25,7 @@
         <div class="card card-user">
             <div class="card-body">
                 <div id="ajaxload">
-                    @include('paginate-table-load',['users'=>$users])
+                    @include('paginate-table-load',['users'=>$users,'js'=>true])
                 </div>
             </div>
         </div>
@@ -63,8 +34,11 @@
 @endsection
 
 @section('js')
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.33.1/dist/sweetalert2.all.min.js"></script>
 <script type="text/javascript">
+    var age_range;
+    var table;
     var search = {
         'start_date' : '',
         'end_date' : '',
@@ -74,6 +48,7 @@
         'age_max': '',
         'age_min': '',
         'page':0,
+        'search':''
     };
     var url_;
     $(function() {
@@ -108,6 +83,7 @@
                 },
                 error:function(data){
                     console.log(data);
+                    Swal.close();
                 },
                 beforeSend:function(data){
                     Swal.fire({
@@ -121,7 +97,9 @@
                     });
                 }
             });
-        }
+        }  
+
     });
 </script>
+
 @endsection

@@ -24,4 +24,10 @@ Route::prefix('paginate/table')->group(function(){
     Route::get('/','PaginateController@lista')->name('paginacao.table.ajax');
 });
 
+
+Route::prefix('datatable/vue')->group(function(){
+    Route::get('/','DataTableVueController@lista')->name('datatable.vue');
+    Route::get('/ajax','DataTableVueController@ajax')->name('datatable.vue.ajax');
+});
+
 Route::get('/','HomeController@index')->name('index');

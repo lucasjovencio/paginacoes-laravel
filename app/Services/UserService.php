@@ -5,6 +5,8 @@ use Auth;
 use DB;
 use Illuminate\Http\Request;
 use App\User;
+use JamesDordoy\LaravelVueDatatable\Http\Resources\DataTableCollectionResource;
+
 class UserService{
 
     public static function ajaxPaginate(Request $request)
@@ -58,5 +60,16 @@ class UserService{
     public static function users()
     {
         return User::all();
+    }
+
+    public static function vue(Request $request)
+    {
+        $length = $request->input('length');
+        $column = $request->input('column'); //Index
+        $orderBy = $request->input('dir', 'asc');
+        $searchValue = $request->input('search');
+        $query = User::dataTableQuery($column, $orderBy, $searchValue);
+        $data = $query->paginate($length);
+        return new DataTableCollectionResource($data);
     }
 }

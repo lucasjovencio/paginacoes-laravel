@@ -58,6 +58,12 @@
                 <i class="ni ni-tv-2 text-blue"></i> Paginate table ajax
               </a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('datatable.vue')}}">
+                <i class="ni ni-tv-2 text-blue"></i> Paginação datatable vue
+              </a>
+            </li>
             
 
           </ul>

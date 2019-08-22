@@ -167,6 +167,7 @@ return [
          */
 
         Yajra\DataTables\DataTablesServiceProvider::class,
+        JamesDordoy\LaravelVueDatatable\Providers\LaravelVueDatatableServiceProvider::class,
 
         /*
          * Application Service Providers...
