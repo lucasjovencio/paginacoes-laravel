@@ -65,11 +65,47 @@ class UserService{
     public static function vue(Request $request)
     {
         $length = $request->input('length');
-        $column = $request->input('column'); //Index
         $orderBy = $request->input('dir', 'asc');
         $searchValue = $request->input('search');
-        $query = User::dataTableQuery($column, $orderBy, $searchValue);
-        $data = $query->paginate($length);
+        $query = User::dataTableQuery('name', $orderBy, '');
+        $data = $query->where(function ($query) use ($request){
+            if($request->search)
+            {
+                $query->orWhere('name','LIKE', '%'.$request->search.'%')
+                ->orWhereRaw(" 
+                    (CASE WHEN genre = 'MALE' THEN 'masculino' LIKE '%".$request->search."%'
+                    WHEN genre = 'FEMALE' THEN 'feminino' LIKE '%".$request->search."%'
+                    ELSE 'outro' LIKE '%".$request->search."%' END)
+                ")
+                ->orWhereRaw(" 
+                    (CASE WHEN `type` = 'MASTER' THEN 'administrador' LIKE '%".$request->search."%'
+                    WHEN `type` = 'ADMIN' THEN 'gerente' LIKE '%".$request->search."%'
+                    ELSE 'cliente' LIKE '%".$request->search."%' END)
+                ")
+                ->orWhereRaw(" 
+                    (CASE WHEN `status` = 'ACTIVE' THEN 'ativo' LIKE '%".$request->search."%'
+                    WHEN `status` = 'INACTIVE' THEN 'inativo' LIKE '".$request->search."%'
+                    ELSE 'desabilitado' LIKE '%".$request->search."%' END)
+                ");
+            }
+            if($request->status)
+            {
+                $query->where('status', $request->status);
+            }
+            if($request->genre)
+            {
+                $query->where('genre', $request->genre);
+            }
+            if($request->type)
+            {
+                $query->where('type', $request->type);
+            }
+            if($request->age_min || $request->age_max )
+            {
+                $query->whereRaw('YEAR(FROM_DAYS(TO_DAYS(NOW())-TO_DAYS(date_birth)))  >= ?',[$request->age_min ?? 0]);
+                $query->whereRaw('YEAR(FROM_DAYS(TO_DAYS(NOW())-TO_DAYS(date_birth)))  <= ?',[$request->age_max ?? 100]);
+            }
+        })->paginate($length);
         return new DataTableCollectionResource($data);
     }
 }
