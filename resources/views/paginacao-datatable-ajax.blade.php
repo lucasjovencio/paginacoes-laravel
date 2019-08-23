@@ -151,6 +151,7 @@
         'age_max': '',
         'age_min': '',
     };
+    
     $.fn.dataTable.ext.search.push(
         function( settings, data, dataIndex ) {
             var min = parseFloat( $('#min').val(), 0);
