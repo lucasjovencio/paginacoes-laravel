@@ -81,7 +81,6 @@
 @section('js')
 <script type="text/javascript">
 
-    var age_range;
     $.fn.dataTable.ext.search.push(
         function( settings, data, dataIndex ) {
             var min = parseFloat( $('#min').val(), 0);
@@ -92,7 +91,7 @@
                 ( min <= col   && isNaN( max ) ) ||
                 ( min <= col   && col <= max ) )
             {
-            return true;
+                return true;
             }
             return false;
         }

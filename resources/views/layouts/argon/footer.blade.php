@@ -28,6 +28,8 @@
       </footer>
     </div>
   </div>
+
+  <script src="{{ asset('js/app.js') }}"></script>
   <!-- Argon Scripts -->
   <!-- Core -->
   <script src="{{asset('argon-dashboard-master/assets/vendor/jquery/dist/jquery.min.js') }}"></script>
@@ -51,7 +53,7 @@
   
   @yield('js')
   @yield('loadjs')
-  <script src="{{ asset('js/app.js') }}"></script>
+  
 </body>
 
 </html>

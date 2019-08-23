@@ -1783,13 +1783,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-// import DatatableFactory from 'vuejs-datatable';
-// import DataTableFilters from './components/DataTableFiltersComponent.vue';
 /* harmony default export */ __webpack_exports__["default"] = ({
-  // components: { DatatableFactory },
   mounted: function mounted() {
     console.log('Component mounted.');
   },
@@ -1825,8 +1819,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     };
   },
-  components: {// DataTableFilters
-  }
+  components: {}
 });
 
 /***/ }),
@@ -44844,9 +44837,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "card" }, [
-      _c("div", { staticClass: "card-header" }, [
-        _vm._v("Laravel Vue Datatables Component Example - ItSolutionStuff.com")
-      ]),
+      _c("div", { staticClass: "card-header" }, [_vm._v("DataTable Vue")]),
       _vm._v(" "),
       _c(
         "div",

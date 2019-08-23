@@ -25,7 +25,6 @@
     },
     "dependencies": {
         "laravel-vue-datatable": "^0.3.6",
-        "laravel-vue-pagination": "^2.3.0",
-        "vuejs-datatable": "^1.7.0"
+        "laravel-vue-pagination": "^2.3.0"
     }
 }

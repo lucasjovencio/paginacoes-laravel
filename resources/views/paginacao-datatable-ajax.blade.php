@@ -75,7 +75,6 @@
                                 <option value="INACTIVE">Inativo</option>
                             </select>
                         </div>
-
                         <div class="col-sm-3 col-sm-offset-3">
                             <label>Filtro por Tipo</label>
                             <select class="form-control filtertype">
@@ -85,7 +84,6 @@
                                 <option value="CLIENT">Client</option>
                             </select>
                         </div>
-
                         <div class="col-sm-3 col-sm-offset-3">
                             <label>Filtro por Gênero</label>
                             <select class="form-control filtergenre">
@@ -95,10 +93,8 @@
                                 <option value="OTHER">Outro</option>
                             </select>
                         </div>
-
                         <div class="col-sm-3 col-sm-offset-3">
                         </div>
-
                         <div class="col-sm-3 col-sm-offset-3">
                             <label>Idade mínima</label>
                             <input class="form-control filterminage" placeholder="Idade mínima" type="number" name="min">
@@ -191,17 +187,8 @@
                 {data: 'action', name: 'action'},
             ],
             responsive: false,
-            // "columnDefs": [
-            //     {
-            //         "targets": [ 6 ],
-            //         "visible": false,
-            //         "searchable": true
-            //     }
-            // ],
             scrollY:        "100%",
-            // scrollX:        true,
             scrollCollapse: true,
-            // fixedColumns: true,
             "order": [[ 0, "ASC" ]],
             "language": {
                 "url": "{{asset('argon-dashboard-master/assets/js/plugins/DataTables/pt-br.json')}}"
@@ -244,31 +231,28 @@
         table.destroy();
         fetch_data();
     });
-
     $('.filtertype').on('change',function(){
         search.type = $(this).val();
         table.destroy();
         fetch_data();
     });
-
     $('.filtergenre').on('change',function(){
         search.genre = $(this).val();
         table.destroy();
         fetch_data();
     });
-
-
     $('.filterminage').on('keyup',function(){
         search.age_min = $(this).val();
         table.destroy();
         fetch_data();
     });
-
     $('.filtermaxage').on('keyup',function(){
         search.age_max = $(this).val();
         table.destroy();
         fetch_data();
     });
+
+
 
 
     

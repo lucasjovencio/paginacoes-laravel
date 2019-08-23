@@ -10,12 +10,9 @@ class DataTableVueController extends Controller
     {
         return view('paginacao-vue',
             [
-                
             ]
         );
-        
     }
-
     public function ajax(Request $request){
         return UserService::vue($request);
     }

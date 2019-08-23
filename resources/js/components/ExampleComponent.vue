@@ -1,8 +1,7 @@
 <template>
     <div class="container">
         <div class="card">
-            <div class="card-header">Laravel Vue Datatables Component Example - ItSolutionStuff.com</div>
-
+            <div class="card-header">DataTable Vue</div>
             <div class="card-body">
                 <data-table
                     :url="url"
@@ -19,18 +18,13 @@
                         </datatable-filters>
                     </span>
                 </data-table>
-            <!-- <datatable :columns="columns" :data="rows"></datatable> -->
-            <!-- <datatable-pager v-model="page" type="abbreviated" :per-page="per_page"></datatable-pager> -->
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    // import DatatableFactory from 'vuejs-datatable';
-    // import DataTableFilters from './components/DataTableFiltersComponent.vue';
     export default {
-        // components: { DatatableFactory },
         mounted() {
             console.log('Component mounted.')
         },
@@ -73,7 +67,6 @@
             }
         },
         components: {
-            // DataTableFilters
         }
     }
 </script>
